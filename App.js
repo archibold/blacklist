@@ -4,11 +4,13 @@ import {
   SafeAreaView,
   StyleSheet,
   StatusBar,
+  Platform,
 } from 'react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons  from 'react-native-vector-icons/MaterialCommunityIcons';
-
+// import SaferAreaView from './components/saferAreaView';
 import HomeScreen from './pages/home';
 import AddScreen from './pages/add';
 
@@ -58,10 +60,11 @@ const App: () => React$Node = () => {
 const styles = StyleSheet.create({
     topSafeArea: {
         flex: 0,
-        backgroundColor: 'black'
+        backgroundColor: 'black',
     },
     bottomSafeArea: {
         flex: 1,
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
         backgroundColor: 'black',
     }
 });
