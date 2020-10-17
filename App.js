@@ -7,10 +7,14 @@ import {
   Platform,
 } from 'react-native';
 
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs([
+  'Animated: `useNativeDriver` was not specified.',
+]);
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons  from 'react-native-vector-icons/MaterialCommunityIcons';
-// import SaferAreaView from './components/saferAreaView';
 import HomeScreen from './pages/home';
 import AddScreen from './pages/add';
 

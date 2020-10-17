@@ -12,7 +12,7 @@ import { setHolder as setHolderService} from '../services/storage';
 
 const Add = ({navigation}) => {
   const [holderName, setHolderName] = useState('');
-  const [date, setDate] = useState(new Date().toISOString().slice(0,10));
+  const [date, setDate] = useState(new Date());
   const [name, setName] = useState('');
   let _nameInput = React.createRef();
   let _holderNameInput = React.createRef();
@@ -25,9 +25,9 @@ const Add = ({navigation}) => {
       name
     }
     setHolderName('');
-    setDate(new Date().toISOString().slice(0,10));
+    setDate(new Date());
     setName('');
-    _holderNameInput.focus()
+    _holderNameInput.focus();
     setHolderService(data).then(() => navigation.navigate('Home'));
   }
 
